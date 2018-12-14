@@ -1,0 +1,50 @@
+{
+  "name": "heimrichhannot/contao-formhybrid-compatibility-bundle",
+  "description": "A bundle bringing compatibility our contao 4 environment.",
+  "type": "contao-bundle",
+  "homepage": "https://github.com/heimrichhannot/contao-formhybrid-compatibility-bundle",
+  "license": "LGPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Heimrich & Hannot",
+      "email": "digitales@heimrich-hannot.de",
+      "homepage": "http://www.heimrich-hannot.de",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "contao/core-bundle": "^4.4",
+    "heimrichhannot/contao-formhybrid": "^3.5",
+    "heimrichhannot/contao-utils-bundle": "^2.40"
+  },
+  "suggest": {
+    "heimrichhannot/contao-encore-bundle": "Asset managment with Symfony Encore."
+  },
+  "autoload": {
+    "psr-4": {
+      "HeimrichHannot\\ContaoFormhybridCompatibilityBundle\\": "src/"
+    },
+    "classmap": [
+      "src/"
+    ],
+    "exclude-from-classmap": [
+      "src/Resources/contao/config/",
+      "src/Resources/contao/dca/",
+      "src/Resources/contao/languages/",
+      "src/Resources/contao/templates/"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "HeimrichHannot\\ContaoFormhybridCompatibilityBundle\\Test\\": "tests/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "extra": {
+    "contao-manager-plugin": "HeimrichHannot\\ContaoFormhybridCompatibilityBundle\\ContaoManager\\Plugin",
+    "foxy": true
+  }
+}
