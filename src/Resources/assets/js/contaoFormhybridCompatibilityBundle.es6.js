@@ -1,3 +1,5 @@
+
+
 function Formhybrid() {
 }
 
@@ -29,42 +31,12 @@ Formhybrid.prototype.scrollToMessages = function(container) {
     let alert = container.querySelector('.alert, .error');
 
     if (null != alert && !container.classList.contains('noscroll')) {
-        this.scrollTo(alert, 100, 500);
-        // container.scrollIntoView({ behavior: "smooth" });
-        // HASTE_PLUS.scrollTo(alert, 100, 500);
+
+        import(/* webpackChunkName: "contao-utils-bundle" */ 'contao-utils-bundle').then((UtilsBundle) => {
+                UtilsBundle.dom.scrollTo(alert, 100, 500);
+            },
+        );
     }
-};
-
-Formhybrid.prototype.scrollTo = function(element, offset = 0, delay = 0, force = false) {
-    let rect = element.getBoundingClientRect();
-    let scrollPosition = (rect.top + window.pageYOffset - offset);
-    setTimeout(() => {
-        if (!this.elementInViewport(element) || force === true)
-            window.scrollTo({
-                'top': scrollPosition,
-                'behavior': 'smooth',
-            });
-    }, delay);
-};
-
-Formhybrid.prototype.elementInViewport = function(el) {
-    let top = el.offsetTop;
-    let left = el.offsetLeft;
-    let width = el.offsetWidth;
-    let height = el.offsetHeight;
-
-    while (el.offsetParent) {
-        el = el.offsetParent;
-        top += el.offsetTop;
-        left += el.offsetLeft;
-    }
-
-    return (
-        top < (window.pageYOffset + window.innerHeight) &&
-        left < (window.pageXOffset + window.innerWidth) &&
-        (top + height) > window.pageYOffset &&
-        (left + width) > window.pageXOffset
-    );
 };
 
 Formhybrid.prototype.asyncSubmitEvent = function(event, url = undefined) {

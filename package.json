@@ -1,0 +1,8 @@
+{
+  "name": "contao-formhybrid-compatibility-bundle",
+  "version": "1.0.0",
+  "main": "src/Resources/assets/js/contaoFormhybridCompatibilityBundle.es6.js",
+  "repository": "git@github.com:heimrichhannot/contao-formhybrid-compatibility-bundle.git",
+  "author": "Heimrich & Hannot GmbH <digitales@heimrich-hannot.de>",
+  "license": "MIT"
+}
