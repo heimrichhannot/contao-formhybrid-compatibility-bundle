@@ -70,7 +70,6 @@ Formhybrid.prototype.asyncSubmitEvent = function(event, url = undefined) {
     let beforeSend = function() {
         let i = 1;
         let text = submitText.textContent;
-        console.log('Before:', text);
         setInterval(() => {
             submitText.textContent = text + Array((++i % 4) + 1).join('.');
         });
