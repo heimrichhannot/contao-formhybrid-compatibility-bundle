@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 #### Changed
 * some renaming and refactoring to reflect conventions and better syntax support
 * add `submitting` class to form while sending asynchronous instead of showing dot animation
+* also submit `button` elements disabled when submitting asynchronous
 
 ## [0.1.1] - 2018-12-19
 

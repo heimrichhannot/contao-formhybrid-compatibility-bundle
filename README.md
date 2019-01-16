@@ -34,3 +34,13 @@ Following events are fired during lifecycle.
 Event                    | Description
 ------------------------ | -----------
 formhybrid_ajax_complete | Fired after an ajax event completed. For example after an asynchronous form submit. 
+
+## UPGRADE
+
+### Async submit animation
+
+Since: v0.2  
+Applies to updates from: module, v0.1
+
+Instead of adding animated dots to the submit button text when doing an asynchronous form submit, a `submitting` class is added to the form element.
+
