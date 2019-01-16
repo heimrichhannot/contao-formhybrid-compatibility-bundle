@@ -12,7 +12,7 @@ Currently ported js features:
 * asynchronous form submit
 * scroll to status message after submit
 
-## Install
+## Setup
 
 1. Add this bundle as dependency
 ```sh
@@ -21,9 +21,13 @@ composer require heimrichhannot/contao-formhybrid-compatibility-bundle
 
 1. Update your Encore bundles file and your compile your webpack dependencies
 
+1. Add `contao-formhybrid-compatibility-bundle` as active entry on your form pages or on your root page.
+
 ## Usage
 
-Add `contao-formhybrid-compatibility-bundle` as active entry on your form pages or on your root page.
+### Styling when asynchronous form submit
+
+A `submitting` class is added to the `form` element when doing an asynchronous form submit.   
 
 ## Develop
 
