@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.2.0] - 2019-01-16
+
+#### Changed
+* some renaming and refactoring to reflect conventions and better syntax support
+* add `submitting` class to form while sending asynchronous instead of showing dot animation
+
 ## [0.1.1] - 2018-12-19
 
 #### Fixed

@@ -1,7 +1,11 @@
 huh:
   encore:
     entries:
-      - { name: "contao-formhybrid-compatibility-bundle", file: 'vendor/heimrichhannot/contao-formhybrid-compatibility-bundle/src/Resources/assets/js/contaoFormhybridCompatibilityBundle.es6.js', requiresCss: false }
+      - {
+          name: "contao-formhybrid-compatibility-bundle",
+          file: 'vendor/heimrichhannot/contao-formhybrid-compatibility-bundle/src/Resources/assets/js/contao-formhybrid-compatibility-bundle.js',
+          requiresCss: false
+        }
     legacy:
       js:
         - jquery.formhybrid

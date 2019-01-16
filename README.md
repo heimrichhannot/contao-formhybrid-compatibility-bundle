@@ -1,6 +1,6 @@
 # Contao Formhybrid Compatibility Bundle
 
-A bundle enhancing compatibility with our Contao 4 environment.
+A bundle enhancing [Formhybrid](https://github.com/heimrichhannot/contao-formhybrid) compatibility with our Contao 4 environment.
 
 ## Features
 * support for [Encore Bundle](https://github.com/heimrichhannot/contao-encore-bundle)
@@ -10,14 +10,20 @@ A bundle enhancing compatibility with our Contao 4 environment.
 
 Currently ported js features:
 * asynchronous form submit
+* scroll to status message after submit
 
 ## Install
 
-TODO
+1. Add this bundle as dependency
+```sh
+composer require heimrichhannot/contao-formhybrid-compatibility-bundle
+```
+
+1. Update your Encore bundles file and your compile your webpack dependencies
 
 ## Usage
 
-Add `contao-formhybrid-vanilla-bundle` as active entry on your form pages or on your root page.
+Add `contao-formhybrid-compatibility-bundle` as active entry on your form pages or on your root page.
 
 ## Develop
 
