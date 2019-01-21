@@ -15,13 +15,14 @@ Currently ported js features:
 ## Setup
 
 1. Add this bundle as dependency
-```sh
-composer require heimrichhannot/contao-formhybrid-compatibility-bundle
-```
+
+        composer require heimrichhannot/contao-formhybrid-compatibility-bundle
 
 1. Update your Encore bundles file and your compile your webpack dependencies
 
 1. Add `contao-formhybrid-compatibility-bundle` as active entry on your form pages or on your root page.
+
+1. Check if you need polyfills for supporting IE and Edge (or other ~~annoying~~ outdated browsers)
 
 ## Usage
 
@@ -37,7 +38,19 @@ Following events are fired during lifecycle.
 
 Event                    | Description
 ------------------------ | -----------
-formhybrid_ajax_complete | Fired after an ajax event completed. For example after an asynchronous form submit. 
+formhybrid_ajax_complete | Fired after an ajax event completed. For example after an asynchronous form submit.
+
+### IE and Edge compability
+
+For compability with IE and Edge browsers you need to polyfill following js functions:
+
+Function | Polyfill
+---------|---------
+ChildNode.replaceWith() | https://developer.mozilla.org/de/docs/Web/API/ChildNode/replaceWith
+CustomEvent | https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
+NodeList.prototype.forEach() | https://github.com/imagitama/nodelist-foreach-polyfill
+
+Add these polyfill to your main project js entrypoint. 
 
 ## UPGRADE
 
