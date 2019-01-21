@@ -22,7 +22,7 @@ Currently ported js features:
 
 1. Add `contao-formhybrid-compatibility-bundle` as active entry on your form pages or on your root page.
 
-1. Check if you need polyfills for supporting IE and Edge (or other ~~annoying~~ outdated browsers)
+1. Check if you need polyfills for supporting IE and Edge (or other ~~annoying~~ outdated browsers) (see [Polyfills](#polyfills) section)
 
 ## Usage
 
@@ -40,7 +40,7 @@ Event                    | Description
 ------------------------ | -----------
 formhybrid_ajax_complete | Fired after an ajax event completed. For example after an asynchronous form submit.
 
-### IE and Edge compability
+### Polyfills
 
 For compability with IE and Edge browsers you need to polyfill following js functions:
 
