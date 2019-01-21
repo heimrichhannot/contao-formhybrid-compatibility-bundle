@@ -1,3 +1,5 @@
+import UtilsBundle from 'contao-utils-bundle';
+
 class Formhybrid {
 
     onReady()
@@ -29,11 +31,7 @@ class Formhybrid {
         let alert = container.querySelector('.alert, .error');
 
         if (null != alert && !container.classList.contains('noscroll')) {
-
-            import(/* webpackChunkName: "contao-utils-bundle" */ 'contao-utils-bundle').then((UtilsBundle) => {
-                    UtilsBundle.dom.scrollTo(alert, 100, 500);
-                },
-            );
+            UtilsBundle.dom.scrollTo(alert, 100, 500);
         }
     }
 
@@ -81,7 +79,7 @@ class Formhybrid {
                             }
                         });
 
-                        replaceForm.dispatchEvent(new Event('formhybrid_ajax_complete', {
+                        replaceForm.dispatchEvent(new CustomEvent('formhybrid_ajax_complete', {
                             bubbles: true,
                         }));
 
@@ -107,4 +105,4 @@ class Formhybrid {
     }
 }
 
-module.exports = Formhybrid;
+export default Formhybrid

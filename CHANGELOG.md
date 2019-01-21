@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.2.1] - 2019-01-21
+
+#### Changed
+* replaced dynamic import with static import due IE incompatibility
+
 ## [0.2.0] - 2019-01-16
 
 #### Changed
