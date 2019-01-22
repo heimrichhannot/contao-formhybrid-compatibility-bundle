@@ -2,8 +2,7 @@ import UtilsBundle from 'contao-utils-bundle';
 
 class Formhybrid {
 
-    onReady()
-    {
+    onReady() {
         this.asyncSubmit();
     }
 
@@ -31,7 +30,13 @@ class Formhybrid {
         let alert = container.querySelector('.alert, .error');
 
         if (null != alert && !container.classList.contains('noscroll')) {
+            let focusable = container.querySelector('input.error:not([tabindex="-1"]), select.error:not([tabindex="-1"]), textarea.error:not([tabindex="-1"])');
+
             UtilsBundle.dom.scrollTo(alert, 100, 500);
+
+            if (null !== focusable) {
+                focusable.focus();
+            }
         }
     }
 
@@ -52,7 +57,7 @@ class Formhybrid {
         let beforeSend = () => {
             form.classList.add('submitting');
         };
-        request.onreadystatechange = function() {
+        request.onreadystatechange = function () {
             const DONE = 4;
             const OK = 200;
 
@@ -90,7 +95,7 @@ class Formhybrid {
                 }
             }
         }.bind(this);
-        request.onerror = function() {
+        request.onerror = function () {
             if (request.status === 300) {
                 let url = JSON.parse(request.responseText).result.data.url;
 

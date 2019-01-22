@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.2.3] - 2019-01-16
+
+#### Fixed
+* correctly focus first input on error
+
 ## [0.2.2] - 2019-01-22
 
 #### Changed 
