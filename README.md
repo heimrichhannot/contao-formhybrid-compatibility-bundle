@@ -49,7 +49,6 @@ Function                     | Polyfill            | Required
 ChildNode.replaceWith()      | https://developer.mozilla.org/de/docs/Web/API/ChildNode/replaceWith | Yes
 CustomEvent                  | https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent | Optional, no finish event is fired
 NodeList.prototype.forEach() | https://github.com/imagitama/nodelist-foreach-polyfill | Yes
-window.scrollTo              | https://www.npmjs.com/package/smoothscroll-polyfill | No, scroll to error or success message not working
 
 Add these polyfill to your main project js entrypoint. 
 

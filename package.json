@@ -4,5 +4,8 @@
   "main": "src/Resources/assets/js/contaoFormhybridCompatibilityBundle.es6.js",
   "repository": "git@github.com:heimrichhannot/contao-formhybrid-compatibility-bundle.git",
   "author": "Heimrich & Hannot GmbH <digitales@heimrich-hannot.de>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "contao-utils-bundle": "^1.3.1"
+  }
 }
