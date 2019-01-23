@@ -31,7 +31,13 @@ class Formhybrid {
         let alert = container.querySelector('.alert, .error');
 
         if (null != alert && !container.classList.contains('noscroll')) {
+            let focusable = container.querySelector('input.error:not([tabindex="-1"]), select.error:not([tabindex="-1"]), textarea.error:not([tabindex="-1"])');
+
             DomUtil.scrollTo(alert, 100, 500);
+
+            if (null !== focusable) {
+                focusable.focus();
+            }
         }
     }
 
