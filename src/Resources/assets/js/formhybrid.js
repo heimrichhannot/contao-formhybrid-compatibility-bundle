@@ -1,4 +1,4 @@
-import UtilsBundle from 'contao-utils-bundle';
+import { DomUtil } from '@hundh/contao-utils-bundle';
 
 class Formhybrid {
 
@@ -31,7 +31,7 @@ class Formhybrid {
         let alert = container.querySelector('.alert, .error');
 
         if (null != alert && !container.classList.contains('noscroll')) {
-            UtilsBundle.dom.scrollTo(alert, 100, 500);
+            DomUtil.scrollTo(alert, 100, 500);
         }
     }
 
