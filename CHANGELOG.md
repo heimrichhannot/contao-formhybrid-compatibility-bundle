@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.3.0] - 2019-01-23
+
+#### Changed
+* use `EventUtil.addDynamicEventListener` to async submit formhybrid forms
+
 ## [0.2.4] - 2019-01-23
 
 #### Changed

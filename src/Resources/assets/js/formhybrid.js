@@ -1,4 +1,5 @@
 import { DomUtil } from '@hundh/contao-utils-bundle';
+import { EventUtil } from '@hundh/contao-utils-bundle';
 
 class Formhybrid {
 
@@ -8,16 +9,10 @@ class Formhybrid {
     }
 
     asyncSubmit() {
-        // if (typeof form !== 'undefined') {
-        //     var $form = $(form);
-        //     if ($form.length > 0) {
-        //         FormhybridAjaxRequest._asyncFormSubmit($form);
-        //     }
-        //     return false;
-        // }
+        let self = this;
 
-        document.querySelectorAll('.formhybrid form[data-async]').forEach((element) => {
-            element.addEventListener('submit', this.asyncSubmitEvent.bind(this));
+        EventUtil.addDynamicEventListener('submit','.formhybrid form[data-async]', function(el, event) {
+            self.asyncSubmitEvent(event);
         });
     }
 
@@ -45,6 +40,7 @@ class Formhybrid {
         event.preventDefault();
         let form = event.target;
         let formData = new FormData(form);
+        let self = this;
         formData.append('FORM_SUBMIT', form.id);
 
         form.querySelectorAll('input:not([disabled]), button[type="submit"]').forEach((elem) => {
@@ -89,7 +85,7 @@ class Formhybrid {
                             bubbles: true,
                         }));
 
-                        this.scrollToMessages(replaceForm);
+                        self.scrollToMessages(replaceForm);
 
                         // closeModal(response, $form);
                     }
@@ -102,7 +98,6 @@ class Formhybrid {
 
                 location.href = url.charAt(0) === '/' ? url : '/' + url;
                 // closeModal(jqXHR.responseJSON, $form);
-                return;
             }
         };
 
