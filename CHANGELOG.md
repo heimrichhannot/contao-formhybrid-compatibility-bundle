@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.4.1] - 2019-06-05
+* fixed issue in composer.json
+
 ## [0.4.0] - 2019-06-05
 * added automatic asset inclusion for forms with formhybrid version >= 3.13
 * added scroll to statusmessage on synchronous submit
