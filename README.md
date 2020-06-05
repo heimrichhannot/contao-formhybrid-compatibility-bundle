@@ -5,12 +5,16 @@ A bundle enhancing [Formhybrid](https://github.com/heimrichhannot/contao-formhyb
 ## Features
 * support for [Encore Bundle](https://github.com/heimrichhannot/contao-encore-bundle)
 * replaces jquery code with native js code
+* js code is automatically added to pages where forms are included (needs formhybrid version >= 3.13)
 
 > Not all js features ported yet
 
 Currently ported js features:
 * asynchronous form submit
 * scroll to status message after submit
+
+Current limitations:
+* Only encore bundle is currently supported for assets
 
 ## Setup
 
@@ -20,9 +24,7 @@ Currently ported js features:
 
 1. Update your Encore bundles file and your compile your webpack dependencies
 
-1. Add `contao-formhybrid-compatibility-bundle` as active entry on your form pages or on your root page.
-
-1. Check if you need polyfills for supporting IE and Edge (or other ~~annoying~~ outdated browsers) (see [Polyfills](#polyfills) section)
+1. Check if you need polyfills for supporting IE and (non-chromium) Edge (or other ~~annoying~~ outdated browsers) (see [Polyfills](#polyfills) section)
 
 ## Usage
 
@@ -54,10 +56,10 @@ Add these polyfill to your main project js entrypoint.
 
 ## UPGRADE
 
-### Async submit animation
+### v0.4
+* Renamed `HeimrichHannotContaoFormhybridCompatibilityBundle` to `HeimrichHannotFormhybridCompatibilityBundle`.
+* JS code is automatically added to forms. If you don't want this, uncheck active on `contao-formhybrid-compatibility-bundle` entry in your encore settings.
 
-Since: v0.2  
-Applies to updates from: module, v0.1
-
-Instead of adding animated dots to the submit button text when doing an asynchronous form submit, a `submitting` class is added to the form element.
+### v0.2
+* Async submit animation: Instead of adding animated dots to the submit button text when doing an asynchronous form submit, a `submitting` class is added to the form element.
 

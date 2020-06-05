@@ -7,5 +7,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('formhybrid_ajax_complete', function() {
-    formhybrid.onReady();
+    formhybrid.onFormhybridAjaxComplete();
 });

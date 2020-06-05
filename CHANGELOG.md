@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2019-06-05
+* added automatic asset inclusion for forms with formhybrid version >= 3.13
+* added scroll to statusmessage on synchronous submit
+* renamed bundle class according to conventions
+* raised minimum encore bundle version to 1.5
+
 ## [0.3.0] - 2019-01-23
 
 #### Changed

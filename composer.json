@@ -19,7 +19,10 @@
     "heimrichhannot/contao-utils-bundle": "^2.40"
   },
   "suggest": {
-    "heimrichhannot/contao-encore-bundle": "Asset management with Symfony Encore."
+    "heimrichhannot/contao-encore-bundle": "^1.5"
+  },
+  "conflict": {
+    "heimrichhannot/contao-encore-bundle": "> 1.5"
   },
   "autoload": {
     "psr-4": {

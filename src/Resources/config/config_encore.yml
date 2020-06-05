@@ -1,11 +1,10 @@
-huh:
-  encore:
-    entries:
-      - {
-          name: "contao-formhybrid-compatibility-bundle",
-          file: 'vendor/heimrichhannot/contao-formhybrid-compatibility-bundle/src/Resources/assets/js/contao-formhybrid-compatibility-bundle.js',
-          requiresCss: false
-        }
-    legacy:
-      js:
-        - jquery.formhybrid
+huh_encore:
+  js_entries:
+    - {
+        name: "contao-formhybrid-compatibility-bundle",
+        file: 'vendor/heimrichhannot/contao-formhybrid-compatibility-bundle/src/Resources/assets/js/contao-formhybrid-compatibility-bundle.js',
+        requires_css: false
+      }
+  unset_global_keys:
+    js:
+      - jquery.formhybrid

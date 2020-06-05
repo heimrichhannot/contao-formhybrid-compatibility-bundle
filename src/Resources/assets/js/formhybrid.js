@@ -6,6 +6,11 @@ class Formhybrid {
     onReady()
     {
         this.asyncSubmit();
+        this.scrollToMessages();
+    }
+    onFormhybridAjaxComplete()
+    {
+        this.asyncSubmit();
     }
 
     asyncSubmit() {
@@ -28,7 +33,7 @@ class Formhybrid {
         if (null != alert && !container.classList.contains('noscroll')) {
             let focusable = container.querySelector('input.error:not([tabindex="-1"]), select.error:not([tabindex="-1"]), textarea.error:not([tabindex="-1"])');
 
-            DomUtil.scrollTo(alert, 100, 500);
+            DomUtil.scrollTo(alert, 100, 500, true);
 
             if (null !== focusable) {
                 focusable.focus();

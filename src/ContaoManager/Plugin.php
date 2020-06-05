@@ -17,12 +17,11 @@ use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Config\ConfigInterface;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
-use Contao\ManagerPlugin\Config\ContainerBuilder;
-use Contao\ManagerPlugin\Config\ExtensionPluginInterface;
-use HeimrichHannot\ContaoFormhybridCompatibilityBundle\HeimrichHannotContaoFormhybridCompatibilityBundle;
-use HeimrichHannot\UtilsBundle\Container\ContainerUtil;
+use Contao\ManagerPlugin\Config\ConfigPluginInterface;
+use HeimrichHannot\ContaoFormhybridCompatibilityBundle\HeimrichHannotFormhybridCompatibilityBundle;
+use Symfony\Component\Config\Loader\LoaderInterface;
 
-class Plugin implements BundlePluginInterface, ExtensionPluginInterface
+class Plugin implements BundlePluginInterface, ConfigPluginInterface
 {
 
     /**
@@ -33,7 +32,7 @@ class Plugin implements BundlePluginInterface, ExtensionPluginInterface
     public function getBundles(ParserInterface $parser)
     {
         return [
-            BundleConfig::create(HeimrichHannotContaoFormhybridCompatibilityBundle::class)->setLoadAfter(
+            BundleConfig::create(HeimrichHannotFormhybridCompatibilityBundle::class)->setLoadAfter(
                 [
                     ContaoCoreBundle::class, 'formhybrid'
                 ]
@@ -41,20 +40,11 @@ class Plugin implements BundlePluginInterface, ExtensionPluginInterface
         ];
     }
 
-    /**
-     * Allows a plugin to override extension configuration.
-     *
-     * @param string $extensionName
-     *
-     * @return array<string,mixed>
-     */
-    public function getExtensionConfig($extensionName, array $extensionConfigs, ContainerBuilder $container)
+    public function registerContainerConfiguration(LoaderInterface $loader, array $managerConfig)
     {
-        return ContainerUtil::mergeConfigFile(
-            'huh_encore',
-            $extensionName,
-            $extensionConfigs,
-            __DIR__.'/../Resources/config/config_encore.yml'
-        );
+        if (class_exists('HeimrichHannot\EncoreBundle\HeimrichHannotContaoEncoreBundle')) {
+            $loader->load('@HeimrichHannotFormhybridCompatibilityBundle/Resources/config/config_encore.yml');
+        }
+        $loader->load('@HeimrichHannotFormhybridCompatibilityBundle/Resources/config/services.yml');
     }
 }
