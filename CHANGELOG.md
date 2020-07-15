@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.4.2] - 2019-07-15
+* fixed console error when no form on current page
+
 ## [0.4.1] - 2019-06-05
 * fixed issue in composer.json
 

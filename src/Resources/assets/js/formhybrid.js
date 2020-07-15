@@ -22,9 +22,11 @@ class Formhybrid {
     }
 
     scrollToMessages(container) {
-
-        if (typeof container === 'undefined') {
+        if (typeof container === 'undefined' || container == null) {
             container = document.querySelector('.formhybrid');
+            if (container === null) {
+                return;
+            }
         }
 
         // scroll to first alert message or first error field
