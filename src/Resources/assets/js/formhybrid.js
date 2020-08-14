@@ -6,8 +6,10 @@ class Formhybrid {
     onReady()
     {
         this.asyncSubmit();
+        this.onchangeSubmit();
         this.scrollToMessages();
     }
+
     onFormhybridAjaxComplete()
     {
         this.asyncSubmit();
@@ -17,8 +19,43 @@ class Formhybrid {
         let self = this;
 
         EventUtil.addDynamicEventListener('submit','.formhybrid form[data-async]', function(el, event) {
-            self.asyncSubmitEvent(event);
+            self.asyncSubmitEvent(event.target);
+            event.preventDefault();
         });
+    }
+
+    onchangeSubmit() {
+        let self = this;
+
+        let selectWithOnchange = document.querySelectorAll('.formhybrid form select[onchange]');
+        selectWithOnchange.forEach(function(element) {
+            element.onchange = ""
+        })
+
+        EventUtil.addDynamicEventListener('change','.formhybrid form select[onchange]', function(el, event) {
+            self.onchangeSubmitEvent(event);
+            event.preventDefault();
+        });
+    }
+
+    onchangeSubmitEvent(event, url = undefined) {
+        let self = this;
+        let forms = document.querySelectorAll('.formhybrid form');
+        let form = undefined;
+        forms.forEach((element) => {
+            if(element.contains(event.target)) {
+                form = element;
+            }
+        })
+
+        if (typeof form === 'undefined') {
+            return;
+        }
+
+        let test = window.location;
+        url = window.location.pathname + '?as=ajax&ag=formhybrid&aa=reload'
+        console.log(url);
+        self.asyncSubmitEvent(form, url);
     }
 
     scrollToMessages(container) {
@@ -43,9 +80,8 @@ class Formhybrid {
         }
     }
 
-    asyncSubmitEvent(event, url = undefined) {
-        event.preventDefault();
-        let form = event.target;
+    asyncSubmitEvent(form, url = undefined) {
+
         let formData = new FormData(form);
         let self = this;
         formData.append('FORM_SUBMIT', form.id);
