@@ -12,6 +12,7 @@ A bundle enhancing [Formhybrid](https://github.com/heimrichhannot/contao-formhyb
 Currently ported js features:
 * asynchronous form submit
 * scroll to status message after submit
+* submitOnChange
 
 Current limitations:
 * Only encore bundle is currently supported for assets
@@ -44,7 +45,7 @@ formhybrid_ajax_complete | Fired after an ajax event completed. For example afte
 
 ### Polyfills
 
-For compability with IE and Edge browsers you need to polyfill following js functions:
+For compatibility with IE and Edge browsers you need to polyfill following js functions:
 
 Function                     | Polyfill            | Required
 ---------------------------- | ------------------- | -------
