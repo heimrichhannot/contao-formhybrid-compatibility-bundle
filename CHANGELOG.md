@@ -1,19 +1,23 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [0.4.2] - 2019-07-15
+## [0.5.0] - 2020-08-17
+* added support for submitOnChange
+* minimum formhybrid module version is now 3.15.0
+
+## [0.4.2] - 2020-07-15
 * fixed console error when no form on current page
 
-## [0.4.1] - 2019-06-05
+## [0.4.1] - 2020-06-05
 * fixed issue in composer.json
 
-## [0.4.0] - 2019-06-05
+## [0.4.0] - 2020-06-05
 * added automatic asset inclusion for forms with formhybrid version >= 3.13
 * added scroll to statusmessage on synchronous submit
 * renamed bundle class according to conventions
 * raised minimum encore bundle version to 1.5
 
-## [0.3.0] - 2019-01-23
+## [0.3.0] - 2019-06-11
 
 #### Changed
 * use `EventUtil.addDynamicEventListener` to async submit formhybrid forms

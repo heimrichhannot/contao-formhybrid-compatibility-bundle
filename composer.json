@@ -15,7 +15,7 @@
   "require": {
     "php": "^7.1",
     "contao/core-bundle": "^4.4",
-    "heimrichhannot/contao-formhybrid": "^3.5",
+    "heimrichhannot/contao-formhybrid": "^3.15",
     "heimrichhannot/contao-utils-bundle": "^2.40"
   },
   "suggest": {

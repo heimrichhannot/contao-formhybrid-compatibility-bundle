@@ -6,16 +6,18 @@ class Formhybrid {
     onReady()
     {
         this.asyncSubmit();
-        this.onchangeSubmit();
+        this.onChangeSubmit();
         this.scrollToMessages();
     }
 
     onFormhybridAjaxComplete()
     {
         this.asyncSubmit();
+        this.onChangeSubmit();
     }
 
-    asyncSubmit() {
+    asyncSubmit()
+    {
         let self = this;
 
         EventUtil.addDynamicEventListener('submit','.formhybrid form[data-async]', function(el, event) {
@@ -24,38 +26,26 @@ class Formhybrid {
         });
     }
 
-    onchangeSubmit() {
-        let self = this;
-
-        let selectWithOnchange = document.querySelectorAll('.formhybrid form select[onchange]');
-        selectWithOnchange.forEach(function(element) {
-            element.onchange = ""
-        })
-
-        EventUtil.addDynamicEventListener('change','.formhybrid form select[onchange]', function(el, event) {
-            self.onchangeSubmitEvent(event);
-            event.preventDefault();
-        });
-    }
-
-    onchangeSubmitEvent(event, url = undefined) {
-        let self = this;
-        let forms = document.querySelectorAll('.formhybrid form');
-        let form = undefined;
-        forms.forEach((element) => {
-            if(element.contains(event.target)) {
-                form = element;
-            }
-        })
-
-        if (typeof form === 'undefined') {
+    onChangeSubmit()
+    {
+        let inputs = document.querySelectorAll('.formhybrid form input[data-submit-on-change], .formhybrid form select[data-submit-on-change]');
+        if (inputs.length < 1 ) {
             return;
         }
+        inputs.forEach((input, index) => {
+            if ("1" !== input.dataset.submitOnChange) {
+                return;
+            }
+            input.addEventListener('change', (event) => {
+                let action = event.target.form.getAttribute('action');
+                let url = new URL(action);
+                url.searchParams.append('as', 'ajax');
+                url.searchParams.append('ag', 'formhybrid');
+                url.searchParams.append('aa', 'reload');
+                this.asyncSubmitEvent(event.target.form, url.toString());
+            });
 
-        let test = window.location;
-        url = window.location.pathname + '?as=ajax&ag=formhybrid&aa=reload'
-        console.log(url);
-        self.asyncSubmitEvent(form, url);
+        });
     }
 
     scrollToMessages(container) {
