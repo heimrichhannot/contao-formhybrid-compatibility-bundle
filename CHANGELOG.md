@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.5.1] - 2020-11-25
+* added support for submitOnChange onclick event
+
 ## [0.5.0] - 2020-08-17
 * added support for submitOnChange
 * minimum formhybrid module version is now 3.15.0

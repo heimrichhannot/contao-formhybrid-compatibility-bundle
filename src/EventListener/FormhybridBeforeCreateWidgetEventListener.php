@@ -24,6 +24,9 @@ class FormhybridBeforeCreateWidgetEventListener
             if ('FormhybridAjaxRequest' ===  substr($widgetData['onchange'], 0, 21)) {
                 unset($widgetData['onchange']);
             }
+            if ('FormhybridAjaxRequest' ===  substr($widgetData['onclick'], 0, 21)) {
+                unset($widgetData['onclick']);
+            }
             $event->setWidgetData($widgetData);
             return $event;
         }
