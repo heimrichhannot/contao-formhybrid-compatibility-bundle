@@ -76,7 +76,7 @@ class Formhybrid {
         let self = this;
         formData.append('FORM_SUBMIT', form.id);
 
-        form.querySelectorAll('input:not([disabled]), button[type="submit"]').forEach((elem) => {
+        form.querySelectorAll('input:not([disabled]), button[type="submit"], select, textarea').forEach((elem) => {
             elem.disabled = true;
         });
 

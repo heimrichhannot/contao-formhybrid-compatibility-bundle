@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.5.2] - 2021-04-08
+- added select and textarea to be disabled on formsubmit
+
 ## [0.5.1] - 2020-11-25
 * added support for submitOnChange onclick event
 
