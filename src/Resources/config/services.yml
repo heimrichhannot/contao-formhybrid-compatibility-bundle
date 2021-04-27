@@ -8,3 +8,7 @@ services:
 
   HeimrichHannot\ContaoFormhybridCompatibilityBundle\EventListener\FormhybridOnCreateInstanceListener:
     public: true
+
+  HeimrichHannot\ContaoFormhybridCompatibilityBundle\:
+    resource: '../../{ServiceAnnotation}/*'
+    autoconfigure: true
