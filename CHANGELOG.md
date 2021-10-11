@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.5.3] - 2021-10-11
+
+- Added: php8 support
+
 ## [0.5.2] - 2021-04-08
 - added select and textarea to be disabled on formsubmit
 
