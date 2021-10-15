@@ -6,5 +6,6 @@ services:
     calls:
       - [setEncoreFrontendAsset, ['@?HeimrichHannot\EncoreBundle\Asset\FrontendAsset']]
 
-  HeimrichHannot\ContaoFormhybridCompatibilityBundle\EventListener\FormhybridOnCreateInstanceListener:
+  HeimrichHannot\ContaoFormhybridCompatibilityBundle\EventListener\:
+    resource: '../../EventListener/*'
     public: true

@@ -115,8 +115,10 @@ class Formhybrid {
                         });
 
                         replaceForm.dispatchEvent(new CustomEvent('formhybrid_ajax_complete', {
-                            bubbles: true,
-                        }));
+                                bubbles: true,
+                                detail: response.result.data
+                            }
+                        ));
 
                         self.scrollToMessages(replaceForm);
 

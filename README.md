@@ -53,7 +53,7 @@ ChildNode.replaceWith()      | https://developer.mozilla.org/de/docs/Web/API/Chi
 CustomEvent                  | https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent | Optional, no finish event is fired
 NodeList.prototype.forEach() | https://github.com/imagitama/nodelist-foreach-polyfill | Yes
 
-Add these polyfill to your main project js entrypoint. 
+Add these polyfills to your main project js entrypoint. 
 
 ## UPGRADE
 

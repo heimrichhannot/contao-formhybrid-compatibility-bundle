@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.5.4] - 2021-10-15
+
+- Changed: pass response data as detail to formhybrid_ajax_complete event
+- Changed: add submitted flag to async form submit response data
+
 ## [0.5.3] - 2021-10-11
 
 - Added: php8 support
