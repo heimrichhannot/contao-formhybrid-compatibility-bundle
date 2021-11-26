@@ -1,5 +1,4 @@
 import { DomUtil } from '@hundh/contao-utils-bundle';
-import { EventUtil } from '@hundh/contao-utils-bundle';
 
 class Formhybrid {
 
@@ -20,9 +19,11 @@ class Formhybrid {
     {
         let self = this;
 
-        EventUtil.addDynamicEventListener('submit','.formhybrid form[data-async]', function(el, event) {
-            self.asyncSubmitEvent(event.target);
-            event.preventDefault();
+        document.querySelectorAll('.formhybrid form[data-async]').forEach( element => {
+            element.addEventListener('submit', event => {
+                event.preventDefault();
+                self.asyncSubmitEvent(event.target);
+            });
         });
     }
 

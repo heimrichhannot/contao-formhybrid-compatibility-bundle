@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.5.5] - 2021-11-26
+
+- Fixed: ajaxFormSubmit event listener to be placed on the form element, so it will be removed together with the form element
+
 ## [0.5.4] - 2021-10-15
 
 - Changed: pass response data as detail to formhybrid_ajax_complete event
