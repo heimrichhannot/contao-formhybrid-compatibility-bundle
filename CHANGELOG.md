@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.5.6] - 2021-11-29
+- Fixed: restored bootstrap modal support for ajaxFormSubmit listener
+
 ## [0.5.5] - 2021-11-26
 
 - Fixed: ajaxFormSubmit event listener to be placed on the form element, so it will be removed together with the form element

@@ -9,17 +9,17 @@ class Formhybrid {
         this.scrollToMessages();
     }
 
-    onFormhybridAjaxComplete()
+    onFormhybridAjaxComplete(parent = document)
     {
-        this.asyncSubmit();
-        this.onChangeSubmit();
+        this.asyncSubmit(parent);
+        this.onChangeSubmit(parent);
     }
 
-    asyncSubmit()
+    asyncSubmit(parent = document)
     {
         let self = this;
 
-        document.querySelectorAll('.formhybrid form[data-async]').forEach( element => {
+        parent.querySelectorAll('.formhybrid form[data-async]').forEach( element => {
             element.addEventListener('submit', event => {
                 event.preventDefault();
                 self.asyncSubmitEvent(event.target);
@@ -27,9 +27,9 @@ class Formhybrid {
         });
     }
 
-    onChangeSubmit()
+    onChangeSubmit(parent = document)
     {
-        let inputs = document.querySelectorAll('.formhybrid form input[data-submit-on-change], .formhybrid form select[data-submit-on-change]');
+        let inputs = parent.querySelectorAll('.formhybrid form input[data-submit-on-change], .formhybrid form select[data-submit-on-change]');
         if (inputs.length < 1 ) {
             return;
         }
