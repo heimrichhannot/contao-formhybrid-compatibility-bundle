@@ -39,7 +39,7 @@ class Formhybrid {
             }
             input.addEventListener('change', (event) => {
                 let action = event.target.form.getAttribute('action');
-                let url = new URL(action);
+                let url = new URL(action, window.location.origin);
                 url.searchParams.append('as', 'ajax');
                 url.searchParams.append('ag', 'formhybrid');
                 url.searchParams.append('aa', 'reload');
@@ -80,6 +80,8 @@ class Formhybrid {
         form.querySelectorAll('input:not([disabled]), button[type="submit"], select, textarea').forEach((elem) => {
             elem.disabled = true;
         });
+        form.dispatchEvent(new CustomEvent('formhybrid_ajax_start', {bubbles: true}));
+
 
         let request = new XMLHttpRequest();
         request.open(form.getAttribute('method'), url ? url : form.getAttribute('action'), true);

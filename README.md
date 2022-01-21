@@ -39,19 +39,20 @@ A `submitting` class is added to the `form` element when doing an asynchronous f
 
 Following events are fired during lifecycle.
 
-Event                    | Description
------------------------- | -----------
-formhybrid_ajax_complete | Fired after an ajax event completed. For example after an asynchronous form submit.
+| Event                    | Description                                                                             |
+|--------------------------|-----------------------------------------------------------------------------------------|
+| formhybrid_ajax_start    | Fired before the ajax call is execute . For example before an asynchronous form submit. |
+| formhybrid_ajax_complete | Fired after an ajax event completed. For example after an asynchronous form submit.     |
 
 ### Polyfills
 
 For compatibility with IE and Edge browsers you need to polyfill following js functions:
 
-Function                     | Polyfill            | Required
----------------------------- | ------------------- | -------
-ChildNode.replaceWith()      | https://developer.mozilla.org/de/docs/Web/API/ChildNode/replaceWith | Yes
-CustomEvent                  | https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent | Optional, no finish event is fired
-NodeList.prototype.forEach() | https://github.com/imagitama/nodelist-foreach-polyfill | Yes
+| Function                     | Polyfill                                                                 | Required                           |
+|------------------------------|--------------------------------------------------------------------------|------------------------------------|
+| ChildNode.replaceWith()      | https://developer.mozilla.org/de/docs/Web/API/ChildNode/replaceWith      | Yes                                |
+| CustomEvent                  | https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent | Optional, no finish event is fired |
+| NodeList.prototype.forEach() | https://github.com/imagitama/nodelist-foreach-polyfill                   | Yes                                |
 
 Add these polyfills to your main project js entrypoint. 
 

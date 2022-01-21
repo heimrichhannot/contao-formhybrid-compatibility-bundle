@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.5.7] - 2022-01-21
+- Added: formhybrid_ajax_start js event
+- Fixed: exception on async form events if form action url is not absolute
+
 ## [0.5.6] - 2021-11-29
 - Fixed: restored bootstrap modal support for ajaxFormSubmit listener
 
