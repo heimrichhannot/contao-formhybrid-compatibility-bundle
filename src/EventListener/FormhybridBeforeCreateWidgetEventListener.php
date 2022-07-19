@@ -9,14 +9,18 @@
  */
 
 
-namespace HeimrichHannot\ContaoFormhybridCompatibilityBundle\EventListener;
+namespace HeimrichHannot\FormhybridCompatibilityBundle\EventListener;
 
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
 use HeimrichHannot\FormHybrid\Event\FormhybridBeforeCreateWidgetEvent;
 
+/**
+ * @Hook(FormhybridBeforeCreateWidgetEvent::NAME)
+ */
 class FormhybridBeforeCreateWidgetEventListener
 {
-    public function __invoke(FormhybridBeforeCreateWidgetEvent $event)
+    public function __invoke(FormhybridBeforeCreateWidgetEvent $event): void
     {
         if (isset($event->getDcaFieldData()['eval']['submitOnChange']) && true === $event->getDcaFieldData()['eval']['submitOnChange']) {
             $widgetData = $event->getWidgetData();
@@ -28,8 +32,6 @@ class FormhybridBeforeCreateWidgetEventListener
                 unset($widgetData['onclick']);
             }
             $event->setWidgetData($widgetData);
-            return $event;
         }
-        return $event;
     }
 }

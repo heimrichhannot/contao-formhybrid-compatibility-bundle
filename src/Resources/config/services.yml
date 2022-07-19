@@ -2,10 +2,10 @@ services:
   _defaults:
     autowire: true
 
-  HeimrichHannot\ContaoFormhybridCompatibilityBundle\Asset\FrontendAsset:
+  HeimrichHannot\FormhybridCompatibilityBundle\Asset\FrontendAsset:
     calls:
       - [setEncoreFrontendAsset, ['@?HeimrichHannot\EncoreBundle\Asset\FrontendAsset']]
 
-  HeimrichHannot\ContaoFormhybridCompatibilityBundle\EventListener\:
+  HeimrichHannot\FormhybridCompatibilityBundle\EventListener\:
     resource: '../../EventListener/*'
-    public: true
+    autoconfigure: true

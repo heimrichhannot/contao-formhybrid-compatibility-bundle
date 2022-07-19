@@ -9,18 +9,19 @@
  */
 
 
-namespace HeimrichHannot\ContaoFormhybridCompatibilityBundle\EventListener;
+namespace HeimrichHannot\FormhybridCompatibilityBundle\EventListener;
 
 
-use HeimrichHannot\ContaoFormhybridCompatibilityBundle\Asset\FrontendAsset;
+use Contao\CoreBundle\ServiceAnnotation\Hook;
+use HeimrichHannot\FormhybridCompatibilityBundle\Asset\FrontendAsset;
 use HeimrichHannot\FormHybrid\Form;
 
+/**
+ * @Hook("formhybridOnCreateInstance")
+ */
 class FormhybridOnCreateInstanceListener
 {
-    /**
-     * @var FrontendAsset
-     */
-    private $frontendAsset;
+    private FrontendAsset $frontendAsset;
 
     /**
      * FormhybridOnCreateInstanceListener constructor.
@@ -30,15 +31,13 @@ class FormhybridOnCreateInstanceListener
         $this->frontendAsset = $frontendAsset;
     }
 
-
     /**
      * @param Form $form
      * @param $varConfig
      * @param int $id
      */
-    public function __invoke(Form $form, $varConfig = null, $id = 0)
+    public function __invoke(Form $form, $varConfig = null, $id = 0): void
     {
         $this->frontendAsset->addFrontendAssets();
-        return;
     }
 }

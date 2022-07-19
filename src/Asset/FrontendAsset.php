@@ -9,7 +9,7 @@
  */
 
 
-namespace HeimrichHannot\ContaoFormhybridCompatibilityBundle\Asset;
+namespace HeimrichHannot\FormhybridCompatibilityBundle\Asset;
 
 
 use HeimrichHannot\UtilsBundle\Container\ContainerUtil;

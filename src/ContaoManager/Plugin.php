@@ -9,7 +9,7 @@
  */
 
 
-namespace HeimrichHannot\ContaoFormhybridCompatibilityBundle\ContaoManager;
+namespace HeimrichHannot\FormhybridCompatibilityBundle\ContaoManager;
 
 
 use Contao\CoreBundle\ContaoCoreBundle;
@@ -18,7 +18,7 @@ use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Config\ConfigInterface;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Contao\ManagerPlugin\Config\ConfigPluginInterface;
-use HeimrichHannot\ContaoFormhybridCompatibilityBundle\HeimrichHannotFormhybridCompatibilityBundle;
+use HeimrichHannot\FormhybridCompatibilityBundle\HeimrichHannotFormhybridCompatibilityBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
 class Plugin implements BundlePluginInterface, ConfigPluginInterface

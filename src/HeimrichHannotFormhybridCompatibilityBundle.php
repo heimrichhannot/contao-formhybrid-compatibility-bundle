@@ -9,7 +9,7 @@
  */
 
 
-namespace HeimrichHannot\ContaoFormhybridCompatibilityBundle;
+namespace HeimrichHannot\FormhybridCompatibilityBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
