@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.6.0] - 2022-07-19
+- Changed: [BREAKING] renamed bundle namespace to FormhybridCompatibilityBundle ([#1])
+- Changed: minimum php version is now 7.4 ([#1])
+- Changed: minimum contao version is now 4.9 ([#1])
+- Changed: code modernization and cleanup ([#1])
+
 ## [0.5.8] - 2022-07-19
 - Fixed: redirect after ajax submit
 
@@ -88,3 +94,6 @@ All notable changes to this project will be documented in this file.
 #### Added
 * encore config
 * asynchronous form submit
+
+
+[#1]: https://github.com/heimrichhannot/contao-formhybrid-compatibility-bundle/pull/1
