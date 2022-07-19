@@ -44,8 +44,8 @@ class Plugin implements BundlePluginInterface, ConfigPluginInterface
     public function registerContainerConfiguration(LoaderInterface $loader, array $managerConfig)
     {
         if (class_exists('HeimrichHannot\EncoreBundle\HeimrichHannotContaoEncoreBundle')) {
-            $loader->load('@HeimrichHannotFormhybridCompatibilityBundle/Resources/config/config_encore.yml');
+            $loader->load('@HeimrichHannotFormhybridCompatibilityBundle/config/config_encore.yml');
         }
-        $loader->load('@HeimrichHannotFormhybridCompatibilityBundle/Resources/config/services.yml');
+        $loader->load('@HeimrichHannotFormhybridCompatibilityBundle/config/services.yml');
     }
 }
