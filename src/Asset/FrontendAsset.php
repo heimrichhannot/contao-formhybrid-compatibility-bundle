@@ -9,47 +9,45 @@
  */
 
 
-namespace HeimrichHannot\ContaoFormhybridCompatibilityBundle\Asset;
+namespace HeimrichHannot\FormhybridCompatibilityBundle\Asset;
 
 
-use HeimrichHannot\UtilsBundle\Container\ContainerUtil;
+use HeimrichHannot\EncoreBundle\Asset\FrontendAsset as EncoreFrontendAsset;
+use HeimrichHannot\UtilsBundle\Util\Utils;
+use Psr\Container\ContainerInterface;
+use Symfony\Contracts\Service\ServiceSubscriberInterface;
 
-class FrontendAsset
+class FrontendAsset implements ServiceSubscriberInterface
 {
-    /**
-     * @var ContainerUtil
-     */
-    private $containerUtil;
-    /**
-     * @var \HeimrichHannot\EncoreBundle\Asset\FrontendAsset
-     */
-    private $encoreFrontendAsset;
+    private ContainerInterface  $container;
+    private Utils              $utils;
 
     /**
      * FrontendAsset constructor.
      */
-    public function __construct(ContainerUtil $containerUtil)
+    public function __construct(ContainerInterface $container, Utils $utils)
     {
-        $this->containerUtil = $containerUtil;
-    }
-
-
-    /**
-     * @param \HeimrichHannot\EncoreBundle\Asset\FrontendAsset $encoreFrontendAsset
-     */
-    public function setEncoreFrontendAsset(\HeimrichHannot\EncoreBundle\Asset\FrontendAsset $encoreFrontendAsset): void
-    {
-        $this->encoreFrontendAsset = $encoreFrontendAsset;
+        $this->container = $container;
+        $this->utils = $utils;
     }
 
     public function addFrontendAssets()
     {
-        if (!$this->containerUtil->isFrontend()) {
+        if (!$this->utils->container()->isFrontend()) {
             return;
         }
 
-        if ($this->encoreFrontendAsset) {
-            $this->encoreFrontendAsset->addActiveEntrypoint('contao-formhybrid-compatibility-bundle');
+        if (class_exists(EncoreFrontendAsset::class) && $this->container->has(EncoreFrontendAsset::class)) {
+            $this->container->get(EncoreFrontendAsset::class)->addActiveEntrypoint('contao-formhybrid-compatibility-bundle');
         }
+    }
+
+    public static function getSubscribedServices()
+    {
+        $services = [];
+        if (class_exists(EncoreFrontendAsset::class)) {
+            $services[] = EncoreFrontendAsset::class;
+        }
+        return $services;
     }
 }

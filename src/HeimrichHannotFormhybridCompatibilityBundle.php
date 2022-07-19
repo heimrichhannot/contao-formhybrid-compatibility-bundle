@@ -9,10 +9,14 @@
  */
 
 
-namespace HeimrichHannot\ContaoFormhybridCompatibilityBundle;
+namespace HeimrichHannot\FormhybridCompatibilityBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class HeimrichHannotFormhybridCompatibilityBundle extends Bundle
 {
+    public function getPath(): string
+    {
+        return \dirname(__DIR__);
+    }
 }

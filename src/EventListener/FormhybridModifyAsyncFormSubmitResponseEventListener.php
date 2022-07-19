@@ -9,14 +9,18 @@
  */
 
 
-namespace HeimrichHannot\ContaoFormhybridCompatibilityBundle\EventListener;
+namespace HeimrichHannot\FormhybridCompatibilityBundle\EventListener;
 
 
+use Contao\CoreBundle\ServiceAnnotation\Hook;
 use HeimrichHannot\FormHybrid\Event\FormhybridModifyAsyncFormSubmitResponseEvent;
 
+/**
+ * @Hook(FormhybridModifyAsyncFormSubmitResponseEvent::NAME)
+ */
 class FormhybridModifyAsyncFormSubmitResponseEventListener
 {
-    public function __invoke(FormhybridModifyAsyncFormSubmitResponseEvent $event)
+    public function __invoke(FormhybridModifyAsyncFormSubmitResponseEvent $event): void
     {
         $responseData = $event->getData();
         $responseData['submitted'] = !$event->getDc()->isDoNotSubmit();

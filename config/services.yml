@@ -1,0 +1,6 @@
+services:
+
+  HeimrichHannot\FormhybridCompatibilityBundle\:
+    resource: '../src/{Asset,EventListener}/*'
+    autoconfigure: true
+    autowire: true

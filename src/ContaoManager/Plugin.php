@@ -9,7 +9,7 @@
  */
 
 
-namespace HeimrichHannot\ContaoFormhybridCompatibilityBundle\ContaoManager;
+namespace HeimrichHannot\FormhybridCompatibilityBundle\ContaoManager;
 
 
 use Contao\CoreBundle\ContaoCoreBundle;
@@ -18,7 +18,7 @@ use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Config\ConfigInterface;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Contao\ManagerPlugin\Config\ConfigPluginInterface;
-use HeimrichHannot\ContaoFormhybridCompatibilityBundle\HeimrichHannotFormhybridCompatibilityBundle;
+use HeimrichHannot\FormhybridCompatibilityBundle\HeimrichHannotFormhybridCompatibilityBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
 class Plugin implements BundlePluginInterface, ConfigPluginInterface
@@ -44,8 +44,8 @@ class Plugin implements BundlePluginInterface, ConfigPluginInterface
     public function registerContainerConfiguration(LoaderInterface $loader, array $managerConfig)
     {
         if (class_exists('HeimrichHannot\EncoreBundle\HeimrichHannotContaoEncoreBundle')) {
-            $loader->load('@HeimrichHannotFormhybridCompatibilityBundle/Resources/config/config_encore.yml');
+            $loader->load('@HeimrichHannotFormhybridCompatibilityBundle/config/config_encore.yml');
         }
-        $loader->load('@HeimrichHannotFormhybridCompatibilityBundle/Resources/config/services.yml');
+        $loader->load('@HeimrichHannotFormhybridCompatibilityBundle/config/services.yml');
     }
 }
