@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.6.1] - 2022-07-19
+- Fixed: path to encore entry
+- Fixed: missing upgrade notice in readme
+
 ## [0.6.0] - 2022-07-19
 - Changed: [BREAKING] renamed bundle namespace to FormhybridCompatibilityBundle ([#1])
 - Changed: minimum php version is now 7.4 ([#1])
