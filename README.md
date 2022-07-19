@@ -58,6 +58,9 @@ Add these polyfills to your main project js entrypoint.
 
 ## UPGRADE
 
+### v0.6
+* Renamed namespace from `ContaoFormhybridCompatibilityBundle` to `FormhybridCompatibilityBundle`
+
 ### v0.4
 * Renamed `HeimrichHannotContaoFormhybridCompatibilityBundle` to `HeimrichHannotFormhybridCompatibilityBundle`.
 * JS code is automatically added to forms. If you don't want this, uncheck active on `contao-formhybrid-compatibility-bundle` entry in your encore settings.
