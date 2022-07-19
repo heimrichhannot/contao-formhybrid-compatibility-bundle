@@ -71,6 +71,10 @@ class Formhybrid {
         }
     }
 
+    redirect(url) {
+        location.href = url.charAt(0) === '/' ? url : '/' + url;
+    }
+
     asyncSubmitEvent(form, url = undefined) {
 
         let formData = new FormData(form);
@@ -91,11 +95,12 @@ class Formhybrid {
             form.classList.add('submitting');
         };
         request.onreadystatechange = function() {
-            const DONE = 4;
-            const OK = 200;
+            const STATE_DONE = 4;
+            const STATUS_OK = 200;
+            const STATUS_REDIRECT = 300;
 
-            if (request.readyState === DONE) {
-                if (request.status === OK) {
+            if (request.readyState === STATE_DONE) {
+                if (request.status === STATUS_OK) {
                     let response = JSON.parse(request.response);
 
                     if (response.result.html && response.result.data.id) {
@@ -129,13 +134,17 @@ class Formhybrid {
                     }
                 }
             }
+
+            if (STATUS_REDIRECT === request.status && request.readyState === 3) {
+                let url = JSON.parse(request.responseText).result.data.url;
+                self.redirect(url);
+            }
+
         }.bind(this);
         request.onerror = function() {
             if (request.status === 300) {
                 let url = JSON.parse(request.responseText).result.data.url;
-
-                location.href = url.charAt(0) === '/' ? url : '/' + url;
-                // closeModal(jqXHR.responseJSON, $form);
+                self.redirect(url);
             }
         };
 

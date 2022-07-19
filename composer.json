@@ -27,24 +27,7 @@
   "autoload": {
     "psr-4": {
       "HeimrichHannot\\ContaoFormhybridCompatibilityBundle\\": "src/"
-    },
-    "classmap": [
-      "src/"
-    ],
-    "exclude-from-classmap": [
-      "src/Resources/contao/config/",
-      "src/Resources/contao/dca/",
-      "src/Resources/contao/languages/",
-      "src/Resources/contao/templates/"
-    ]
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "HeimrichHannot\\ContaoFormhybridCompatibilityBundle\\Test\\": "tests/"
     }
-  },
-  "config": {
-    "preferred-install": "dist"
   },
   "extra": {
     "contao-manager-plugin": "HeimrichHannot\\ContaoFormhybridCompatibilityBundle\\ContaoManager\\Plugin",

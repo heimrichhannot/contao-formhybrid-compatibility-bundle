@@ -34,7 +34,8 @@ class Plugin implements BundlePluginInterface, ConfigPluginInterface
         return [
             BundleConfig::create(HeimrichHannotFormhybridCompatibilityBundle::class)->setLoadAfter(
                 [
-                    ContaoCoreBundle::class, 'formhybrid'
+                    ContaoCoreBundle::class,
+                    'formhybrid'
                 ]
             ),
         ];

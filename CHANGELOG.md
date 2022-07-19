@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.5.8] - 2022-07-19
+- Fixed: redirect after ajax submit
+
 ## [0.5.7] - 2022-01-21
 - Added: formhybrid_ajax_start js event
 - Fixed: exception on async form events if form action url is not absolute
