@@ -13,23 +13,16 @@ namespace HeimrichHannot\FormhybridCompatibilityBundle\EventListener;
 
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
-use HeimrichHannot\FormhybridCompatibilityBundle\Asset\FrontendAsset;
+use HeimrichHannot\EncoreContracts\PageAssetsTrait;
 use HeimrichHannot\FormHybrid\Form;
+use Symfony\Contracts\Service\ServiceSubscriberInterface;
 
 /**
  * @Hook("formhybridOnCreateInstance")
  */
-class FormhybridOnCreateInstanceListener
+class FormhybridOnCreateInstanceListener implements ServiceSubscriberInterface
 {
-    private FrontendAsset $frontendAsset;
-
-    /**
-     * FormhybridOnCreateInstanceListener constructor.
-     */
-    public function __construct(FrontendAsset $frontendAsset)
-    {
-        $this->frontendAsset = $frontendAsset;
-    }
+    use PageAssetsTrait;
 
     /**
      * @param Form $form
@@ -38,6 +31,6 @@ class FormhybridOnCreateInstanceListener
      */
     public function __invoke(Form $form, $varConfig = null, $id = 0): void
     {
-        $this->frontendAsset->addFrontendAssets();
+        $this->addPageEntrypoint('contao-formhybrid-compatibility-bundle');
     }
 }

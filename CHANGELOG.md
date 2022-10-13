@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.7.0] - 2022-10-13
+- Changed: migrated to encore contracts
+- Changed: removed FrontendAsset class
+
 ## [0.6.1] - 2022-07-19
 - Fixed: path to encore entry
 - Fixed: missing upgrade notice in readme

@@ -21,7 +21,7 @@ Current limitations:
 
 1. Add this bundle as dependency
 
-        composer require heimrichhannot/contao-formhybrid-compatibility-bundle
+       composer require heimrichhannot/contao-formhybrid-compatibility-bundle
 
 1. Update your Encore bundles file and your compile your webpack dependencies
 
